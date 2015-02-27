@@ -1,25 +1,5 @@
 @charset "UTF-8";
-/*
-SCSS variables are information about icon's compiled state, stored under its original file name
 
-.icon-home {
-  width: $icon-home-width;
-}
-
-The large array-like variables contain all information about a single icon
-$icon-home: x y offset_x offset_y width height total_width total_height image_path;
-*/
-/*
-The provided mixins are intended to be used with the array-like variables
-
-.icon-home {
-  @include sprite-width($icon-home);
-}
-
-.icon-email {
-  @include sprite($icon-email);
-}
-*/
 /* ===========================================================
 
    [Normalize] 
@@ -595,14 +575,76 @@ body*:before, *:after {
   text-align: right;
 }
 
+#btn-menu a{
+  margin-right: 20px;
+  text-align: right;
+  border: 2px solid #1A201C;
+  border-radius: 90px;
+  display: inline-block;
+  height: 20px;
+  overflow: hidden;
+  padding: 31px 29px;
+  position: relative;
+  width: 24px;
+}
+
+#btn-menu a span {
+  background: none repeat scroll 0 0 #434343;
+  display: block;
+  height: 3px;
+  margin: 0 0 5px;
+  position: relative;
+  transition: all 0.3s ease 0s;
+  width: 24px;
+}
+
+#btn-menu a.activate {
+  -webkit-transform:rotate(360deg);
+  transform:rotate(360deg);
+  transition: all .5s;
+  -webkit-animation:none;
+  animation:none;
+  box-shadow: none;
+  background: none;
+}
+#btn-menu a.activate span{
+  -webkit-transform: translate(0,0) rotate(0deg);
+  transform: translate(0,0) rotate(0deg);
+  height: 3px;
+  width: 24px;
+  margin:0 0 5px 0;
+  background: #434343;
+  border: none;
+  box-shadow: none;
+  opacity: 1;
+  transition: all .5s;
+  -webkit-animation:none;
+  animation:none;
+}
+#btn-menu a.activate span:before,
+#btn-menu a.activate span:after{
+  display: none;
+}
+#btn-menu a.activate span.first{
+  -webkit-transform: translate(0px,8px) rotate(45deg);
+  transform: translate(0px,8px) rotate(45deg);
+}
+#btn-menu a.activate span.second{
+  opacity: 0;
+}
+#btn-menu a.activate span.third{
+  -webkit-transform: translate(0px,-8px) rotate(-45deg);
+  transform: translate(0px,-8px) rotate(-45deg);
+}
+
 #nav.js-nav {
   position: fixed;
+  z-index: 3;
   top: 0;
   right: 0;
   display: block;
   width: 45%;
   height: 100%;
-  z-index: 3;  
 }
 
 @-webkit-keyframes anim-slideOn {
@@ -610,17 +652,14 @@ body*:before, *:after {
     -webkit-transition-timing-function: cubic-bezier(0.96, 0.95, 0.05, 0.04);
             transition-timing-function: cubic-bezier(0.96, 0.95, 0.05, 0.04);
   }
-
   0% {
     -webkit-transform: translate3d(5%, 0, 0);
             transform: translate3d(5%, 0, 0);
   }
-
   50% {
     -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0);
   }
-
   100% {
     -webkit-transform: none;
             transform: none;
@@ -632,17 +671,14 @@ body*:before, *:after {
     -webkit-transition-timing-function: cubic-bezier(0.96, 0.95, 0.05, 0.04);
             transition-timing-function: cubic-bezier(0.96, 0.95, 0.05, 0.04);
   }
-
   0% {
     -webkit-transform: translate3d(5%, 0, 0);
             transform: translate3d(5%, 0, 0);
   }
-
   50% {
     -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0);
   }
-
   100% {
     -webkit-transform: none;
             transform: none;
@@ -662,17 +698,14 @@ body*:before, *:after {
     -webkit-transition-timing-function: cubic-bezier(0.96, 0.95, 0.05, 0.04);
             transition-timing-function: cubic-bezier(0.96, 0.95, 0.05, 0.04);
   }
-
   0% {
     -webkit-transform: translate3d(-10%, 0, 0);
             transform: translate3d(-10%, 0, 0);
   }
-
   50% {
     -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0);
   }
-
   100% {
     -webkit-transform: none;
             transform: none;
@@ -684,17 +717,14 @@ body*:before, *:after {
     -webkit-transition-timing-function: cubic-bezier(0.96, 0.95, 0.05, 0.04);
             transition-timing-function: cubic-bezier(0.96, 0.95, 0.05, 0.04);
   }
-
   0% {
     -webkit-transform: translate3d(-10%, 0, 0);
             transform: translate3d(-10%, 0, 0);
   }
-
   50% {
     -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0);
   }
-
   100% {
     -webkit-transform: none;
             transform: none;
