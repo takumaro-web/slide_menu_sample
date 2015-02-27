@@ -588,6 +588,7 @@ body*:before, *:after {
   position: relative;
   top: 0;
   right: 0;
+  z-index: 4;
 }
 
 #btn-menu {
@@ -601,6 +602,7 @@ body*:before, *:after {
   display: block;
   width: 45%;
   height: 100%;
+  z-index: 3;  
 }
 
 @-webkit-keyframes anim-slideOn {
