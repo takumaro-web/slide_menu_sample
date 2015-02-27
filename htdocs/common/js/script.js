@@ -5,6 +5,7 @@ $(function() {
 function menu(){
   var nav = $("#nav"),
       active ="js-nav",
+      btnOn ="activate",
       animSlideOn ="anim-slideOn",
       animSlideOff ="anim-slideOff",
       $wrapContents = $("#contents"),
@@ -17,6 +18,7 @@ function menu(){
         flag = true;
         navWidth = nav.width();
         $wrapContents.addClass(animSlideOn);
+        $(this).addClass(btnOn);
         if(($wrapContents).hasClass(animSlideOff)){
           ($wrapContents).removeClass(animSlideOff);
         }
@@ -27,6 +29,7 @@ function menu(){
         $wrapContents.addClass(animSlideOff);
         $wrapContents.removeClass(animSlideOn);
         $wrapContents.css({"right":"0"});
+        $(this).removeClass(btnOn);
         flag = false;
       }
       return false;
